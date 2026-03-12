@@ -1,0 +1,6 @@
+[submodule "Github/VulkanSceneGraph"]
+	path = Github/VulkanSceneGraph
+	url = https://github.com/vsg-dev/VulkanSceneGraph.git
+[submodule "Github/VulkanSceneGraphExamples"]
+	path = Github/VulkanSceneGraphExamples
+	url = https://github.com/vsg-dev/vsgExamples.git
