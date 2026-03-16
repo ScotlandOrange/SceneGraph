@@ -1,1 +1,9 @@
 vsg-install/
+
+# third-party build outputs
+/glslang/build/
+/glslang/build-*/
+/Vulkan-Headers/build/
+/Vulkan-Headers/build-*/
+/Vulkan-Loader/build/
+/Vulkan-Loader/build-*/
