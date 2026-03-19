@@ -1,8 +1,43 @@
 
 # SceneGraph
+## vsglights.cpp 的 SceneGraph 节点图
+
+```text
+CommandGraph
+`-- RenderGraph
+    `-- View
+        `-- scene : Group
+            |-- original scene : Group
+            |   |-- Box
+            |   |-- Sphere
+            |   |-- Cylinder
+            |   |-- Capsule
+            |   `-- Quad
+            |-- AmbientLight
+            |-- DirectionalLight
+            |-- CullGroup
+            |   `-- PointLight
+            `-- CullGroup
+                `-- SpotLight
+```
+
+说明：
+- 上面这棵树对应 `vsglights.cpp` 的默认完整结构，也就是未传入 `--headlight` / `--no-lights` 时的节点组成。
+- 如果命令行传入模型文件，那么 `original scene : Group -> Box/Sphere/Cylinder/Capsule/Quad` 这一段，会替换成读入的单个 `model : Node`。
+
 1. 场景图结构建立， vsgt->反序列化 scene 
 
 //.vsgt文件树结构
+
+// CommandGraph
+// `-- RenderGraph
+//     `-- View
+//         |-- Headlight
+//         `-- vsg_scene
+//             |-- Node                 (single input file returning vsg::Node)
+//             `-- Group                (multiple inputs)
+//                 |-- Node
+//                 `-- TextureQuad      (image input converted from vsg::Data)
 
 CullNode
     |
